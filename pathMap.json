@@ -116,6 +116,7 @@
   },
   "scene13": {
     "id": "#scene13",
+    "flavorText": ""
     "option1": "Do nothing, it's fine.",
     "option2": "Cover ears with hands",
     "option1Next": "scene14",
