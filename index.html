@@ -1,72 +1,384 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <!-- 
-      This is an HTML comment
-      You can write text in a comment and the content won't be visible in the page
-    -->
-
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <title>Piesanos Scene</title>
+    <meta name="description" content="Piesanos Scene" />
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mozillareality/aframe-rounded-plane@1.1.0/src/index.js"></script>
+    <script src="logic.js"></script>
+    <script>
+      AFRAME.registerComponent("hover-effect", {
+        schema: {
+          color: { default: "#24CAFF" },
+          initialColor: { default: "#FFF" },
+        },
 
-    <!--
-      This is the page head - it contains info the browser uses
-      Like the title, which appears on the browser tab but not inside the page
-      Further down you'll see the content that displays in the page
-    -->
-    <title>Hello World!</title>
+        init: function () {
+          const el = this.el;
+          const data = this.data;
 
-    <!-- The website stylesheet -->
-    <link rel="stylesheet" href="/style.css" />
+          el.addEventListener("mouseenter", () => {
+            el.setAttribute("material", "color", data.color);
+          });
 
-    <!-- The website JavaScript file -->
-    <script src="/script.js" defer></script>
+          el.addEventListener("mouseleave", () => {
+            el.setAttribute("material", "color", data.initialColor);
+          });
+        },
+      });
+    </script>
   </head>
   <body>
-    <!--
-      The body includes the content you see in the page
-      Each element is defined using tags, like this <div></div>
-      The attributes like class="wrapper" let us style elements in the CSS
-    -->
-    <div class="wrapper">
-      <div class="content" role="main">
-        <h1 class="title">Hello World!</h1>
-        <img
-          src="https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2Fillustration.svg?v=1618177344016"
-          class="illustration"
-          alt="Editor illustration"
-          title="Click the image!"
-        />
-        <div class="instructions">
-          <h2>Using this project</h2>
-          <p>
-            This is the Glitch <strong>Hello Website</strong> project. You can
-            use it to build your own site. Check out the code in the editor and open
-            the <span class="fileopener" data-file="TODO.md" data-line="0"
-              >TODO</span> for next steps!
-          </p>
-          <!--  🚧 TODO: ADD BUTTON HERE -->
+    <a-scene>
+      <!--Load in the video assets-->
+      <a-assets timeout="100000">
+        <!-- Load videos from assets folder-->
+        <video
+          id="scene0a"
+          crossorigin="anonymous"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/verse%20logo_vertical%20glowlines_40.mp4?v=1679662401640"
+          preload="none"
+        ></video>
+        <video
+          id="scene0b"
+          crossorigin="anonymous"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/0_Outside%20Piesanos.mp4?v=1680097373807"
+          preload="none"
+        ></video>
+        <video
+          id="scene1a"
+          crossorigin="anonymous"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/1a_Piesanos%20Front%20Door.mp4?v=1679662365682"
+          preload="none"
+        ></video>
+        <video
+          id="scene2"
+          crossorigin="anonymous"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/2_Inside_Approaching%20Host.mp4?v=1679662366179"
+          preload="none"
+        ></video>
+        <video
+          id="scene3a"
+          crossorigin="anonymous"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/3a_Host%20Greeting.mp4?v=1679662366837"
+          preload="none"
+        ></video>
+        <video
+          id="scene3b"
+          crossorigin="anonymous"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/3b_Host%20Sorry.mp4?v=1679662367498"
+          preload="none"
+        ></video>
+        <video
+          id="scene3c"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/3c_Host%20Follow%20Me.mp4?v=1679662368371"
+          preload="none"
+        ></video>
+        <video
+          id="scene4"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/4_Server%20will%20be%20right%20w%20you.mp4?v=1679662369218"
+          preload="none"
+        ></video>
+        <video
+          id="scene5"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/5_waiting%20for%20server.mp4?v=1679662369984"
+          preload="none"
+        ></video>
+        <video
+          id="scene6a"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/6a_Server%20Intro.mp4?v=1679662370995"
+          preload="none"
+        ></video>
+        <video
+          id="scene6b"
+          src="https://cdn.glitch.me/2a9c8ea7-e69c-449f-8535-c66daf2cd371/6b_Server%20Brings%20Water%20and%20Menu.mp4?v=1679662372488"
+          preload="none"
+        ></video>
+        <video
+          id="scene6c"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/6c_crowd%20looks.mp4?v=1679662373241"
+          preload="none"
+        ></video>
+        <video
+          id="scene6d"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/6c_Please%20Wait%20Don_t%20Shout.mp4?v=1679662374258"
+          preload="none"
+        ></video>
+        <video
+          id="scene8"
+          src="https://cdn.glitch.me/2a9c8ea7-e69c-449f-8535-c66daf2cd371/8_getting_louder%20(1440p).mp4?v=1680075182726"
+          preload="none"
+        ></video>
+        <video
+          id="scene9"
+          src="https://cdn.glitch.me/2a9c8ea7-e69c-449f-8535-c66daf2cd371/9_noisechoice%20(1440p).mp4?v=1680075195722"
+          preload="none"
+        ></video>
+        <video
+          id="scene10a"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/10_Noise%20Lowers%20Placing%20Order.mp4?v=1679662380710"
+          preload="none"
+        ></video>
+        <video
+          id="scene10b"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/10_Placing%20Order_Decision.mp4?v=1679662381220"
+          preload="none"
+        ></video>
+        <video
+          id="scene10c"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/10c_thanks_for_your_order.mp4?v=1679662382502"
+          preload="none"
+        ></video>
+        <video
+          id="scene11a"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/11a_ready%20to%20order_no.mp4?v=1679662383536"
+          preload="none"
+        ></video>
+        <video
+          id="scene11b"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/11b_say%20nothing.mp4?v=1679662384614"
+          preload="none"
+        ></video>
+        <video
+          id="scene12"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/12_at_table_just_water.mp4?v=1679662385730"
+          preload="none"
+        ></video>
+        <video
+          id="scene13"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/13_plates%20crash.mp4?v=1679662386706"
+          preload="none"
+        ></video>
+        <video
+          id="scene14"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/14_sorry%20plates%20dropped.mp4?v=1679662387519"
+          preload="none"
+        ></video>
+        <video
+          id="scene15"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/15_noise%20ends_it%20has%20been%20a%20while%20for%20dinner.mp4?v=1679662388438"
+          preload="none"
+        ></video>
+        <video
+          id="scene16b"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/16b_food%20coming%20be%20quiet.mp4?v=1679662389697"
+          preload="none"
+        ></video>
+        <video
+          id="scene16c"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/16c_food%20wil%20be%20out%20shortly.mp4?v=1679662390871"
+          preload="none"
+        ></video>
+        <video
+          id="scene17a"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/17a_order%20arrives%20pizza_salad.mp4?v=1679662392020"
+          preload="none"
+        ></video>
+        <video
+          id="scene17b"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/17b_order%20arrives%20pizza%20fries.mp4?v=1679662393415"
+          preload="none"
+        ></video>
+        <video
+          id="scene18a"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/18a_wrong%20order_takes%20salad.mp4?v=1679662394375"
+          preload="none"
+        ></video>
+        <video
+          id="scene18b"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/18b_wrong%20order_takes%20fries.mp4?v=1679662395224"
+          preload="none"
+        ></video>
+        <video
+          id="scene18c"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/18c_correcting%20order_salad.mp4?v=1679662396460"
+          preload="none"
+        ></video>
+        <video
+          id="scene19a"
+          src="https://cdn.glitch.me/2a9c8ea7-e69c-449f-8535-c66daf2cd371/19a_table_cleared%20(1440p).mp4?v=1679667902810"
+          preload="none"
+        ></video>
+        <video
+          id="scene19b"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/19b_brings%20check.mp4?v=1679662398992"
+          preload="none"
+        ></video>
+        <video
+          id="scene19c"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/19c_Bye_Have_a_nice_day.mp4?v=1679662400073"
+          preload="none"
+        ></video>
+        <video
+          id="scene20"
+          crossorigin="anonymous"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/20_leaving_piesanos%20(1440p).mp4?v=1680075200899"
+          preload="none"
+        ></video>
+        <video
+          id="scene21"
+          crossorigin="anonymous"
+          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/21_End_Credits.mp4?v=1680075203583"
+          preload="none"
+        ></video>
+        
+      </a-assets>
+      <!--Create the camera for the scene, enable fuse for Gaze based interactions-->
+      <a-camera id="camera">
+        <a-cursor
+          raycaster="objects: [data-clickable];"
+          fuse="true"
+          fuse-timeout="1500"
+          id="cursor"
+          color="#6BA7FF"
+          animation__mouseenter="property: scale; to: 0.1 0.1 0.1; startEvents: mouseenter; dur:1500;"
+          animation__mouseleave="property:scale; to: 1 1 1; startEvents: mouseleave; dur:250;"
+        ></a-cursor>
+      </a-camera>
+      <!--Create the sky (for our purposes, the sky is the video, and the limit) for the scene-->
+      <a-videosphere
+        src="#scene0a"
+        id="videoSphere"
+        rotation="0 -90 0"
+      ></a-videosphere>
 
-          <!-- Once you've added the button from TODO.md, click it in the page -->
-          <!-- Check out the function in script.js to see how it works -->
-        </div>
-      </div>
-    </div>
-    <!-- The footer holds our remix button — you can keep or delete it ✂ -->
-    <footer class="footer">
-      <div class="links"></div>
-      <a
-        class="btn--remix"
-        target="_top"
-        href="https://glitch.com/edit/#!/remix/glitch-hello-website"
+      <!--Buttons-->
+      <!--Play Button-->
+      <a-text
+        value="Play"
+        id="startButton"
+        data-clickable
+        position="0 1.0 -3.1"
+        align="center"
+        onclick="beginExperience()"
+        visible="true"
       >
-        <img
-          src="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FLogo_Color.svg?v=1618199565140"
-          alt=""
-        />
-        Remix on Glitch
-      </a>
-    </footer>
+        <a-plane
+          color="#426E49"
+          id="playPlane"
+          material="src: url(https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/less%20transparent%20frame%2C%208-5.png?v=1680030753877); transparent:true"
+          data-clickable
+          scale="0.8 0.5 1"
+          animation="property:material.color;
+          to:#1D615C;
+          dur:500;
+          startEvents:mouseenter;"
+          animation__leave="property:material.color;
+          to:#426E49;
+          dur:500;
+          startEvents:mouseleave;
+          "
+        >
+        </a-plane>
+      </a-text>
+
+      <a-text
+        value="It's starting to get a little loud"
+        id="flavorText"
+        position="0 0.7 -3.1"
+        wrap-count="100"
+        align="center"
+        visible="false"
+      >
+        <a-plane
+          color="#426E49"
+          id="flavorTextPlane"
+          material="src: url(https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/less%20transparent%20frame%2C%208-5.png?v=1680030753877); transparent:true"
+          scale="1.6 1 1"
+          animation="property:material.color;
+          to:#1D615C;
+          dur:500;
+          startEvents:mouseenter;"
+          animation__leave="property:material.color;
+          to:#426E49;
+          dur:500;
+          startEvents:mouseleave;
+          "
+        >
+        </a-plane>
+      </a-text>
+
+      <!--Enter Button-->
+      <a-text
+        value="Enter"
+        id="enterButton"
+        position="-.7 0.9 -3"
+        align="center"
+        onclick="enterRestaurant()"
+        visible="false"
+      >
+        <a-plane
+          color="#426E49"
+          scale="0.8 0.5 1"
+          material="src: url(https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/less%20transparent%20frame%2C%208-5.png?v=1680030753877); transparent:true"
+          id="enterPlane"
+          animation="property:material.color;
+        to:#1D615C;
+        dur:500;
+        startEvents:mouseenter;"
+          animation__leave="property:material.color;
+        to:#426E49;
+        dur:500;
+        startEvents:mouseleave;
+        "
+        >
+        </a-plane>
+      </a-text>
+      <!--Option 1-->
+      <a-text
+        value="Option 1: Lorem ipsum dolor"
+        wrap-count="130"
+        id="option1"
+        position="-0.8 0.8 -3"
+        align="center"
+        onclick="handleChoice(this.id)"
+        visible="false"
+      >
+        <a-plane
+          color="#426E49"
+          id="option1Plane"
+          material="src: url(https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/less%20transparent%20frame%2C%208-5.png?v=1680030753877); transparent:true"
+          scale="0.8 0.5 1"
+          animation="property:material.color;
+          to:#1D615C;
+          dur:500;
+          startEvents:mouseenter;"
+          animation__leave="property:material.color;
+          to:#426E49;
+          dur:500;
+          startEvents:mouseleave;
+          "
+        >
+        </a-plane>
+      </a-text>
+      <!--Option 2-->
+      <a-text
+        value="Option 2: Lorem ipsum dolor"
+        wrap-count="130"
+        id="option2"
+        position="0.8 0.8 -3"
+        align="center"
+        onclick="handleChoice(this.id)"
+        visible="false"
+      >
+        <a-plane
+          color="#426E49"
+          id="option2Plane"
+          scale="0.8 0.5 1"
+          material="src: url(https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/less%20transparent%20frame%2C%208-5.png?v=1680030753877); transparent:true"
+          animation="property:material.color;
+          to:#1D615C;
+          dur:500;
+          startEvents:mouseenter;"
+          animation__leave="property:material.color;
+          to:#426E49;
+          dur:500;
+          startEvents:mouseleave;
+          "
+        >
+        </a-plane>
+      </a-text>
+    </a-scene>
   </body>
 </html>
