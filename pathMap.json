@@ -116,7 +116,7 @@
   },
   "scene13": {
     "id": "#scene13",
-    "flavorText": ""
+    "flavorText": "What was that?",
     "option1": "Do nothing, it's fine.",
     "option2": "Cover ears with hands",
     "option1Next": "scene14",
@@ -124,6 +124,7 @@
   },
   "scene13Error": {
     "id": "#scene13",
+    "flavorText": "What was that?",
     "option1": "Do nothing, it's fine.",
     "option2": "Cover ears with hands",
     "option1Next": "scene14Error",
