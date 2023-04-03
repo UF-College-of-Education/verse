@@ -38,7 +38,7 @@
     "option1Next": "scene5"
   },
   "scene5": {
-    "flavorText": "It's taking awhile...",
+    "flavorText": "It's been awhile",
     "maxTimes": 1,
     "id": "#scene5",
     "option1": "Wait patiently",
@@ -63,7 +63,7 @@
     "option1Next": "scene5"
   },
   "scene8": {
-    "flavorText": "Music is a bit loud...",
+    "flavorText": "The room is getting loud",
     "id": "#scene8",
     "option1": "Do nothing, it's fine",
     "option2": "Ask waitress to help",
