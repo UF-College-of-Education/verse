@@ -222,7 +222,6 @@
           src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/21_End_Credits.mp4?v=1680075203583"
           preload="none"
         ></video>
-        
       </a-assets>
       <!--Create the camera for the scene, enable fuse for Gaze based interactions-->
       <a-camera id="camera">
@@ -230,6 +229,7 @@
           raycaster="objects: [data-clickable];"
           fuse="true"
           fuse-timeout="1500"
+          geometry="primitive: sphere; radius: 0.005"
           id="cursor"
           color="#6BA7FF"
           animation__mouseenter="property: scale; to: 0.1 0.1 0.1; startEvents: mouseenter; dur:1500;"
