@@ -140,7 +140,7 @@
   },
   "scene15": {
     "id": "#scene15",
-    "flavorText": "It has been awhile...",
+    "flavorText": "It has been a while...",
     "option1": "Wait patiently",
     "option2": "Shout for food",
     "option1Next": "scene16c",
@@ -148,7 +148,7 @@
   },
   "scene15Error": {
     "id": "#scene15",
-    "flavorText": "It has been awhile...",
+    "flavorText": "It has been a while...",
     "option1": "Wait patiently",
     "option2": "Shout for food",
     "option1Next": "scene16cError",
