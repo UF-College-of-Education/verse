@@ -38,7 +38,7 @@
     "option1Next": "scene5"
   },
   "scene5": {
-    "flavorText": "It's been awhile",
+    "flavorText": "It's been a while",
     "maxTimes": 1,
     "id": "#scene5",
     "option1": "Wait patiently",
