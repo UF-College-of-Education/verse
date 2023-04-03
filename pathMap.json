@@ -106,7 +106,7 @@
     "option1Next": "scene13"
   },
   "scene10cError": {
-    "id": "#scene10c",
+    "id": "#scene10cError",
     "option1Next": "scene13Error"
   },
 
@@ -123,7 +123,7 @@
     "option2Next": "scene14"
   },
   "scene13Error": {
-    "id": "#scene13",
+    "id": "#scene13Error",
     "flavorText": "What was that?",
     "option1": "Do nothing, it's fine",
     "option2": "Cover ears with hands",
@@ -135,7 +135,7 @@
     "option1Next": "scene15"
   },
   "scene14Error": {
-    "id": "#scene14",
+    "id": "#scene14Error",
     "option1Next": "scene15Error"
   },
   "scene15": {
@@ -147,7 +147,7 @@
     "option2Next": "scene16b"
   },
   "scene15Error": {
-    "id": "#scene15",
+    "id": "#scene15Error",
     "flavorText": "It has been a while...",
     "option1": "Wait patiently",
     "option2": "Shout for food",
@@ -159,7 +159,7 @@
     "option1Next": "scene15"
   },
   "scene16bError": {
-    "id": "#scene16b",
+    "id": "#scene16bError",
     "option1Next": "scene15Error"
   },
   "scene16c": {
@@ -167,7 +167,7 @@
     "option1Next": "scene17a"
   },
   "scene16cError": {
-    "id": "#scene16c",
+    "id": "#scene16cError",
     "option1Next": "scene17b"
   },
   "scene17a": {
