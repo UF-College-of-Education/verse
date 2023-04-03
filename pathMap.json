@@ -82,7 +82,7 @@
     "flavorText": "The noise goes down...",
     "id": "#scene10a",
     "option1": "Yes, I'm ready",
-    "option2": "A little more time.",
+    "option2": "A little more time",
     "option1Next": "scene10b",
     "option2Next": "scene11a"
   },
@@ -117,7 +117,7 @@
   "scene13": {
     "id": "#scene13",
     "flavorText": "What was that?",
-    "option1": "Do nothing, it's fine.",
+    "option1": "Do nothing, it's fine",
     "option2": "Cover ears with hands",
     "option1Next": "scene14",
     "option2Next": "scene14"
@@ -125,7 +125,7 @@
   "scene13Error": {
     "id": "#scene13",
     "flavorText": "What was that?",
-    "option1": "Do nothing, it's fine.",
+    "option1": "Do nothing, it's fine",
     "option2": "Cover ears with hands",
     "option1Next": "scene14Error",
     "option2Next": "scene14Error"
@@ -141,16 +141,16 @@
   "scene15": {
     "id": "#scene15",
     "flavorText": "It has been awhile...",
-    "option1": "Wait patiently.",
-    "option2": "Shout for food.",
+    "option1": "Wait patiently",
+    "option2": "Shout for food",
     "option1Next": "scene16c",
     "option2Next": "scene16b"
   },
   "scene15Error": {
     "id": "#scene15",
     "flavorText": "It has been awhile...",
-    "option1": "Wait patiently.",
-    "option2": "Shout for food.",
+    "option1": "Wait patiently",
+    "option2": "Shout for food",
     "option1Next": "scene16cError",
     "option2Next": "scene16bError"
   },
@@ -194,7 +194,7 @@
     "option1Next": "scene19b"
   },
   "scene19b": {
-    "flavorText": "It's customary to leave a tip.",
+    "flavorText": "It's customary to leave a tip",
     "id": "#scene19b",
     "option1": "Leave tip",
     "option2": "Don't leave tip",

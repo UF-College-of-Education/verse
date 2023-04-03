@@ -4,8 +4,7 @@
     <meta charset="utf-8" />
     <title>Piesanos Scene</title>
     <meta name="description" content="Piesanos Scene" />
-    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mozillareality/aframe-rounded-plane@1.1.0/src/index.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="logic.js"></script>
     <script>
       AFRAME.registerComponent("hover-effect", {
@@ -222,6 +221,7 @@
           src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/21_End_Credits.mp4?v=1680075203583"
           preload="none"
         ></video>
+        
       </a-assets>
       <!--Create the camera for the scene, enable fuse for Gaze based interactions-->
       <a-camera id="camera">
@@ -328,9 +328,9 @@
       <!--Option 1-->
       <a-text
         value="Option 1: Lorem ipsum dolor"
-        wrap-count="130"
+        wrap-count="120"
         id="option1"
-        position="-0.8 0.8 -3"
+        position="-1.2 0.8 -3"
         align="center"
         onclick="handleChoice(this.id)"
         visible="false"
@@ -355,9 +355,9 @@
       <!--Option 2-->
       <a-text
         value="Option 2: Lorem ipsum dolor"
-        wrap-count="130"
+        wrap-count="120"
         id="option2"
-        position="0.8 0.8 -3"
+        position="1.2 0.8 -3"
         align="center"
         onclick="handleChoice(this.id)"
         visible="false"
