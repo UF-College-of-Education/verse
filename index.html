@@ -27,10 +27,13 @@
         },
       });
     </script>
-    <link rel="splashscreen" href="splash.html">
+    <link rel="splashscreen" href="splash.html" />
   </head>
   <body>
-    <a-scene vr-mode-ui="cardboardModeEnabled: true">
+    <div id="splash-screen">
+      <button id="start-button">Start</button>
+    </div>
+    <a-scene>
       <!--Load in the video assets-->
       <a-assets timeout="100000">
         <!-- Load videos from assets folder-->
