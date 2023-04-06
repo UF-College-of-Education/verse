@@ -210,6 +210,7 @@
     "option1Next": "scene21"
   },
   "scene21" : {
-    "id": "#scene21"
+    "id": "#scene21",
+    "endScene": true
   }
 }
