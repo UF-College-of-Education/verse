@@ -186,7 +186,6 @@ function populateButtons(scene) {
 }
 
 function enterRestaurant() {
-  document.getElementById("scene2").pause();
   let videoSphere = document.getElementById("videoSphere");
   let option1 = document.getElementById("option1");
   let option1Plane = document.getElementById("option1Plane");
