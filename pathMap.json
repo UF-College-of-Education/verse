@@ -179,7 +179,8 @@
     "flavorText": "This isn't what I ordered...",
     "option1": "I didn't order this",
     "option2": "I don't mind.",
-    "option1Next": "scene18b"
+    "option1Next": "scene18b",
+    "option2Next":"insert"
   },
   "scene18b": {
     "id": "#scene18b",
