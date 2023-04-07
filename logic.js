@@ -103,17 +103,21 @@ function handleChoice(choiceID) {
 
     nextVideo.addEventListener("ended", function () {
       console.log("Video ended");
-      if (
-        pathMap[nextScene].hasOwnProperty("numLoop") &&
-        pathMap[nextScene]["numLoop"] >= 2
-      ) {
-        handleChoice("option2");
-      }
+
       if (pathMap[nextScene].hasOwnProperty("option1")) {
         console.log("This scene has options");
         populateButtons(nextScene);
+        if (
+          pathMap[nextScene].hasOwnProperty("numLoop") &&
+          pathMap[nextScene]["numLoop"] >= 2
+        ) {
+          handleChoice("option2");
+        }
       } else {
         console.log("This scene has no options");
+        if (pathMap[nextScene].hasOwnProperty("endScene")) {
+          location.reload();
+        }
         handleChoice("option1");
         //nextScene = videPathMap[nextScene]["option1Next"];
         //nextID = pathMap[nextScene]["id"];
@@ -150,17 +154,21 @@ function handleChoice(choiceID) {
     document.querySelector("#" + currentScene).pause();
     nextVideo.addEventListener("ended", function () {
       console.log("Video ended");
-      if (
-        pathMap[nextScene].hasOwnProperty("numLoop") &&
-        pathMap[nextScene]["numLoop"] >= 2
-      ) {
-        handleChoice("option2");
-      }
+
       if (pathMap[nextScene].hasOwnProperty("option1")) {
         console.log("This scene has options");
         populateButtons(nextScene);
+        if (
+          pathMap[nextScene].hasOwnProperty("numLoop") &&
+          pathMap[nextScene]["numLoop"] >= 2
+        ) {
+          handleChoice("option2");
+        }
       } else {
         console.log("This scene has no options");
+        if (pathMap[nextScene].hasOwnProperty("endScene")) {
+          location.reload();
+        }
         handleChoice("option1");
       }
     });
