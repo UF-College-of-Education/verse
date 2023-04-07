@@ -23,7 +23,8 @@
     "option1": "Say nothing",
     "option2": "Greet hostess",
     "option1Next": "scene3b",
-    "option2Next": "scene3c"
+    "option2Next": "scene3c",
+    "numLoop": 0
   },
   "scene3b": {
     "id": "#scene3b",
@@ -44,7 +45,8 @@
     "option1": "Wait patiently",
     "option2": "Shout for waitress",
     "option1Next": "scene6a",
-    "option2Next": "scene6c"
+    "option2Next": "scene6c",
+    "numLoop": 0
   },
   "scene6a": {
     "id": "#scene6a",
@@ -144,7 +146,8 @@
     "option1": "Wait patiently",
     "option2": "Shout for food",
     "option1Next": "scene16c",
-    "option2Next": "scene16b"
+    "option2Next": "scene16b",
+    "numLoop": 0
   },
   "scene15Error": {
     "id": "#scene15Error",
@@ -152,7 +155,8 @@
     "option1": "Wait patiently",
     "option2": "Shout for food",
     "option1Next": "scene16cError",
-    "option2Next": "scene16bError"
+    "option2Next": "scene16bError",
+    "numLoop": 0
   },
   "scene16b": {
     "id": "#scene16b",

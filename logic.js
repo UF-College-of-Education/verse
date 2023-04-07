@@ -203,17 +203,19 @@ function enterRestaurant() {
   videoSphere.setAttribute("loop", false);
   enterButton.setAttribute("visible", "false");
   document.getElementById("enterPlane").removeAttribute("data-clickable");
-  populateButtons("scene3a");
-  option1.setAttribute("visible", "false");
-  option1Plane.removeAttribute("data-clickable");
-  option2.setAttribute("visible", "false");
-  option2Plane.removeAttribute("data-clickable");
+  pathMap["#scene3a"]["num"]
+  
+  //option1.setAttribute("visible", "false");
+  //option1Plane.removeAttribute("data-clickable");
+  //option2.setAttribute("visible", "false");
+  //option2Plane.removeAttribute("data-clickable");
 
   scene3a.addEventListener("ended", function () {
-    option1.setAttribute("visible", "true");
-    option1Plane.setAttribute("data-clickable");
-    option2.setAttribute("visible", "true");
-    option2Plane.setAttribute("data-clickable");
+    // option1.setAttribute("visible", "true");
+    // option1Plane.setAttribute("data-clickable");
+    // option2.setAttribute("visible", "true");
+    // option2Plane.setAttribute("data-clickable");
+    populateButtons("scene3a");
   });
   myVideo.play();
 }
