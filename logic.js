@@ -7,13 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       console.log(data);
       pathMap = data;
-      originalPathMap = deepCopy(pathMap)
-      console.log("Original path map:", originalPathMap)
+      originalPathMap = deepCopy(pathMap);
+      console.log("Original path map:", originalPathMap);
     });
 });
-
-
-
 
 //Move all of our elements to global variables
 
@@ -98,11 +95,20 @@ function handleChoice(choiceID) {
       flavorTextPlane.setAttribute("visible", "true");
       flavorText.setAttribute("visible", "true");
     }
+    if (pathMap[nextScene].hasOwnProperty("numLoop")) {
+      pathMap[nextScene]["numLoop"]++;
+    }
     let nextVideo = document.querySelector(nextID);
     videoSphere.setAttribute("src", nextID);
 
     nextVideo.addEventListener("ended", function () {
       console.log("Video ended");
+      if (
+        pathMap[nextScene].hasOwnProperty("numLoop") &&
+        pathMap[nextScene]["numLoop"] >= 2
+      ) {
+        handleChoice("option1");
+      }
       if (pathMap[nextScene].hasOwnProperty("option1")) {
         console.log("This scene has options");
         populateButtons(nextScene);
@@ -116,7 +122,7 @@ function handleChoice(choiceID) {
     });
     console.log("Next video playing!");
     nextVideo.play();
-    
+
     setTimeout(() => {
       flavorText.setAttribute("visible", "false");
       flavorTextPlane.setAttribute("visible", "false");
@@ -135,12 +141,21 @@ function handleChoice(choiceID) {
       flavorTextPlane.setAttribute("visible", "true");
       flavorText.setAttribute("visible", "true");
     }
+    if (pathMap[nextScene].hasOwnProperty("numLoop")) {
+      pathMap[nextScene]["numLoop"]++;
+    }
     let nextID = pathMap[nextScene]["id"];
     let nextVideo = document.querySelector(nextID);
     videoSphere.setAttribute("src", nextID);
     document.querySelector("#" + currentScene).pause();
     nextVideo.addEventListener("ended", function () {
       console.log("Video ended");
+      if (
+        pathMap[nextScene].hasOwnProperty("numLoop") &&
+        pathMap[nextScene]["numLoop"] >= 2
+      ) {
+        handleChoice("option1");
+      }
       if (pathMap[nextScene].hasOwnProperty("option1")) {
         console.log("This scene has options");
         populateButtons(nextScene);
@@ -203,8 +218,8 @@ function enterRestaurant() {
   videoSphere.setAttribute("loop", false);
   enterButton.setAttribute("visible", "false");
   document.getElementById("enterPlane").removeAttribute("data-clickable");
-  pathMap["#scene3a"]["num"]
-  
+  pathMap["#scene3a"]["numLoop"]++;
+
   //option1.setAttribute("visible", "false");
   //option1Plane.removeAttribute("data-clickable");
   //option2.setAttribute("visible", "false");
