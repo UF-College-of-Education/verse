@@ -95,7 +95,6 @@ function handleChoice(choiceID) {
     }
     let nextVideo = document.querySelector(nextID);
     videoSphere.setAttribute("src", nextID);
-    document.querySelector("#" + currentScene).pause();
 
     nextVideo.addEventListener("ended", function () {
       console.log("Video ended");
