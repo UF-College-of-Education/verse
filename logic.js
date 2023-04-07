@@ -1,18 +1,19 @@
 let pathMap;
+const deepCopy = (obj) => JSON.parse(JSON.stringify(obj));
+let originalPathMap;
 document.addEventListener("DOMContentLoaded", () => {
   fetch("./pathMap.json")
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
       pathMap = data;
+      originalPathMap = deepCopy(pathMap)
+      console.log("Original path map:", originalPathMap)
     });
 });
 
-//create a deep copy of the path map at initialization to ensure we have an original state to compare to.
-const deepCopy = (obj) => JSON.parse(JSON.stringify(obj));
-const originalPathmap = deepCopy(pathMap);
-console.log("Created deep copy of original pathmap.")
-console.log(pathMap);
+
+
 
 //Move all of our elements to global variables
 
@@ -64,46 +65,97 @@ function beginExperience() {
 /**
  * @param {string} choiceID - the ID
  */
-async function handleChoice(choiceID) {
-  console.log(`This is your choice ${choiceID}`);
-  
-  // Disable option buttons and get the current scene
-  const option1Plane = document.getElementById("option1Plane");
-  const option2Plane = document.getElementById("option2Plane");
+function handleChoice(choiceID) {
+  console.log("This is your choice " + choiceID);
+  let videoSphere = document.getElementById("videoSphere");
+  //set current option buttons to invisible
+  let option1 = document.getElementById("option1");
+  let option2 = document.getElementById("option2");
+  let option1Plane = document.getElementById("option1Plane");
+  let option2Plane = document.getElementById("option2Plane");
+  let flavorText = document.getElementById("flavorText");
+  let flavorTextPlane = document.getElementById("flavorTextPlane");
+  let flavorTextBool = true;
   option1Plane.removeAttribute("data-clickable");
   option2Plane.removeAttribute("data-clickable");
-  const videoSphere = document.getElementById("videoSphere");
-  const currentScene = videoSphere.getAttribute("src").substring(1);
-  
-  // Get the next scene and flavor text, if any
-  const nextScene = pathMap[currentScene][`${choiceID}Next`];
-  const nextID = pathMap[nextScene]["id"];
-  const flavorText = pathMap[nextScene]["flavorText"];
-  
-  // Display flavor text for a short duration, if available
-  if (flavorText) {
-    const flavorTextElem = document.getElementById("flavorText");
-    const flavorTextPlane = document.getElementById("flavorTextPlane");
-    flavorTextElem.setAttribute("value", flavorText);
-    flavorTextPlane.setAttribute("visible", "true");
-    flavorTextElem.setAttribute("visible", "true");
-    await sleep(8000);
-    flavorTextElem.setAttribute("visible", "false");
-    flavorTextPlane.setAttribute("visible", "false");
-  }
-  
-  // Load and play the next video
-  const nextVideo = document.querySelector(nextID);
-  videoSphere.setAttribute("src", nextID);
-  document.querySelector(`#${currentScene}`).pause();
-  nextVideo.addEventListener("ended", () => {
-    if (pathMap[nextScene].hasOwnProperty("option1")) {
-      populateButtons(nextScene);
-    } else {
-      handleChoice("option1");
+  option1.setAttribute("visible", "false");
+  option2.setAttribute("visible", "false");
+  //get the current scene and remove the id tag.
+  let currentScene = videoSphere.getAttribute("src").substring(1);
+  let option1Next = pathMap[currentScene]["option1Next"];
+  let option2Next = pathMap[currentScene]["option2Next"];
+
+  if (choiceID == "option1") {
+    console.log(pathMap[currentScene]);
+    let nextScene = pathMap[currentScene]["option1Next"];
+    console.log("Moving to next scene: " + nextScene);
+    console.log(pathMap[nextScene]);
+    let nextID = pathMap[nextScene]["id"];
+    if (pathMap[nextScene].hasOwnProperty("flavorText")) {
+      console.log("We have flavor text");
+      flavorText.setAttribute("value", pathMap[nextScene]["flavorText"]);
+      flavorTextBool = true;
+      flavorTextPlane.setAttribute("visible", "true");
+      flavorText.setAttribute("visible", "true");
     }
-  });
-  nextVideo.play();
+    let nextVideo = document.querySelector(nextID);
+    videoSphere.setAttribute("src", nextID);
+
+    nextVideo.addEventListener("ended", function () {
+      console.log("Video ended");
+      if (pathMap[nextScene].hasOwnProperty("option1")) {
+        console.log("This scene has options");
+        populateButtons(nextScene);
+      } else {
+        console.log("This scene has no options");
+        handleChoice("option1");
+        //nextScene = videPathMap[nextScene]["option1Next"];
+        //nextID = pathMap[nextScene]["id"];
+        //videoSphere.setAttribute("src", nextID);
+      }
+    });
+    console.log("Next video playing!");
+    nextVideo.play();
+    
+    setTimeout(() => {
+      flavorText.setAttribute("visible", "false");
+      flavorTextPlane.setAttribute("visible", "false");
+      flavorTextBool = false;
+    }, 8000);
+  } else {
+    console.log("entering option2 block");
+    console.log(pathMap[currentScene]);
+    let nextScene = pathMap[currentScene]["option2Next"];
+    console.log("Moving to next scene: " + nextScene);
+    console.log(pathMap[nextScene]);
+    if (pathMap[nextScene].hasOwnProperty("flavorText")) {
+      console.log("We have flavor text");
+      flavorText.setAttribute("value", pathMap[nextScene]["flavorText"]);
+      flavorTextBool = true;
+      flavorTextPlane.setAttribute("visible", "true");
+      flavorText.setAttribute("visible", "true");
+    }
+    let nextID = pathMap[nextScene]["id"];
+    let nextVideo = document.querySelector(nextID);
+    videoSphere.setAttribute("src", nextID);
+    document.querySelector("#" + currentScene).pause();
+    nextVideo.addEventListener("ended", function () {
+      console.log("Video ended");
+      if (pathMap[nextScene].hasOwnProperty("option1")) {
+        console.log("This scene has options");
+        populateButtons(nextScene);
+      } else {
+        console.log("This scene has no options");
+        handleChoice("option1");
+      }
+    });
+    document.querySelector(nextID).play();
+    setTimeout(() => {
+      flavorText.setAttribute("visible", "false");
+      flavorTextPlane.setAttribute("visible", "false");
+      flavorTextBool = false;
+    }, 8000);
+  }
 }
 
 function populateButtons(scene) {
