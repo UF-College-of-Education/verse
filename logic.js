@@ -110,7 +110,7 @@ function handleChoice(choiceID) {
         populateButtons(nextScene);
         if (
           pathMap[nextScene].hasOwnProperty("numLoop") &&
-          pathMap[nextScene]["numLoop"] >= 2
+          pathMap[nextScene]["numLoop"] >= 3
         ) {
           console.log("number of times looped:",pathMap[nextScene]["numLoop"])
           handleChoice("option2");
@@ -162,7 +162,7 @@ function handleChoice(choiceID) {
         populateButtons(nextScene);
         if (
           pathMap[nextScene].hasOwnProperty("numLoop") &&
-          pathMap[nextScene]["numLoop"] >= 2
+          pathMap[nextScene]["numLoop"] >= 3
         ) {
           handleChoice("option2");
         }
