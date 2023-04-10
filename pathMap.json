@@ -184,7 +184,7 @@
     "option1": "I didn't order this",
     "option2": "I don't mind.",
     "option1Next": "scene18b",
-    "option2Next":"insert"
+    "option2Next":"scene19a"
   },
   "scene18b": {
     "id": "#scene18b",
