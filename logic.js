@@ -96,6 +96,7 @@ function handleChoice(choiceID) {
       flavorText.setAttribute("visible", "true");
     }
     if (pathMap[nextScene].hasOwnProperty("numLoop")) {
+      console.log("number of times looped",pathMap[nextScene]["numLoop"]);
       pathMap[nextScene]["numLoop"]++;
     }
     let nextVideo = document.querySelector(nextID);
@@ -111,6 +112,7 @@ function handleChoice(choiceID) {
           pathMap[nextScene].hasOwnProperty("numLoop") &&
           pathMap[nextScene]["numLoop"] >= 2
         ) {
+          console.log("number of times looped:",pathMap[nextScene]["numLoop"])
           handleChoice("option2");
         }
       } else {

@@ -40,7 +40,6 @@
   },
   "scene5": {
     "flavorText": "It's been a while...",
-    "maxTimes": 1,
     "id": "#scene5",
     "option2": "Wait patiently",
     "option1": "Shout for server",
@@ -81,7 +80,7 @@
     "option1Next": "scene10a"
   },
   "scene10a": {
-    "flavorText": "The noise goes down...",
+    "flavorText": "The noise went down...",
     "id": "#scene10a",
     "option1": "I'm ready to order",
     "option2": "A little more time",
