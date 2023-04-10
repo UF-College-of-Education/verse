@@ -21,7 +21,7 @@
   "scene3a": {
     "id": "#scene3a",
     "option1": "Say nothing",
-    "option2": "Greet hostess",
+    "option2": "Greet host",
     "option1Next": "scene3b",
     "option2Next": "scene3c",
     "numLoop": 0
@@ -39,11 +39,11 @@
     "option1Next": "scene5"
   },
   "scene5": {
-    "flavorText": "It's been a while",
+    "flavorText": "It's been a while...",
     "maxTimes": 1,
     "id": "#scene5",
     "option2": "Wait patiently",
-    "option1": "Shout for waitress",
+    "option1": "Shout for server",
     "option2Next": "scene6a",
     "option1Next": "scene6c",
     "numLoop": 0
@@ -65,10 +65,10 @@
     "option1Next": "scene5"
   },
   "scene8": {
-    "flavorText": "The room is getting loud",
+    "flavorText": "The room is getting loud...",
     "id": "#scene8",
     "option1": "Do nothing, it's fine",
-    "option2": "Ask waitress to help",
+    "option2": "Ask server to help",
     "option1Next": "scene10a",
     "option2Next": "scene9"
   },
@@ -83,7 +83,7 @@
   "scene10a": {
     "flavorText": "The noise goes down...",
     "id": "#scene10a",
-    "option1": "Yes, I'm ready",
+    "option1": "I'm ready to order",
     "option2": "A little more time",
     "option1Next": "scene10b",
     "option2Next": "scene11a"
@@ -132,6 +132,23 @@
     "option1Next": "scene14Error",
     "option2Next": "scene14Error"
   },
+    "scene13b": {
+    "id": "#scene13a",
+    "flavorText": "What was that?",
+    "option1": "Do nothing, it's fine",
+    "option2": "Cover ears with hands",
+    "option1Next": "scene14",
+    "option2Next": "scene14"
+  },
+    "scene13bError": {
+    "id": "#scene13a",
+    "flavorText": "What was that?",
+    "option1": "Do nothing, it's fine",
+    "option2": "Cover ears with hands",
+    "option1Next": "scene14",
+    "option2Next": "scene14"
+  },
+  
   "scene14": {
     "id": "#scene14",
     "option1Next": "scene15"
