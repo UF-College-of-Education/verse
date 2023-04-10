@@ -154,8 +154,8 @@
     "flavorText": "It has been a while...",
     "option2": "Wait patiently",
     "option1": "Shout for food",
-    "option2Next": "scene16c",
-    "option1Next": "scene16b",
+    "option2Next": "scene16cError",
+    "option1Next": "scene16bError",
     "numLoop": 0
   },
   "scene16b": {
