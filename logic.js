@@ -131,7 +131,7 @@ function handleChoice(choiceID) {
       flavorText.setAttribute("visible", "false");
       flavorTextPlane.setAttribute("visible", "false");
       flavorTextBool = false;
-    }, 8000);
+    }, 4000);
   } else {
     console.log("entering option2 block");
     console.log(pathMap[currentScene]);
@@ -177,7 +177,7 @@ function handleChoice(choiceID) {
       flavorText.setAttribute("visible", "false");
       flavorTextPlane.setAttribute("visible", "false");
       flavorTextBool = false;
-    }, 8000);
+    }, 4000);
   }
 }
 
