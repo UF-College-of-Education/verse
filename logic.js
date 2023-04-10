@@ -110,7 +110,7 @@ function handleChoice(choiceID) {
         populateButtons(nextScene);
         if (
           pathMap[nextScene].hasOwnProperty("numLoop") &&
-          pathMap[nextScene]["numLoop"] >= 3
+          pathMap[nextScene]["numLoop"] >= 2
         ) {
           console.log("number of times looped:",pathMap[nextScene]["numLoop"])
           handleChoice("option2");
@@ -162,7 +162,7 @@ function handleChoice(choiceID) {
         populateButtons(nextScene);
         if (
           pathMap[nextScene].hasOwnProperty("numLoop") &&
-          pathMap[nextScene]["numLoop"] >= 3
+          pathMap[nextScene]["numLoop"] >= 2
         ) {
           handleChoice("option2");
         }
@@ -228,7 +228,6 @@ function enterRestaurant() {
   videoSphere.setAttribute("loop", false);
   enterButton.setAttribute("visible", "false");
   document.getElementById("enterPlane").removeAttribute("data-clickable");
-  pathMap["scene3a"]["numLoop"]++;
 
   //option1.setAttribute("visible", "false");
   //option1Plane.removeAttribute("data-clickable");
