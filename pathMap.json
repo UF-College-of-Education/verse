@@ -105,11 +105,11 @@
   },
   "scene10c": {
     "id": "#scene10c",
-    "option1Next": "scene13"
+    "option1Next": "scene13a"
   },
   "scene10cError": {
     "id": "#scene10cError",
-    "option1Next": "scene13Error"
+    "option1Next": "scene13aError"
   },
 
   "scene12": {
