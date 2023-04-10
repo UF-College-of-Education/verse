@@ -116,16 +116,16 @@
     "id": "#scene12",
     "option1Next": "scene13"
   },
-  "scene13": {
-    "id": "#scene13",
+  "scene13a": {
+    "id": "#scene13a",
     "flavorText": "What was that?",
     "option1": "Do nothing, it's fine",
     "option2": "Cover ears with hands",
     "option1Next": "scene14",
     "option2Next": "scene14"
   },
-  "scene13Error": {
-    "id": "#scene13Error",
+  "scene13aError": {
+    "id": "#scene13aError",
     "flavorText": "What was that?",
     "option1": "Do nothing, it's fine",
     "option2": "Cover ears with hands",
