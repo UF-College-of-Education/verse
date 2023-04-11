@@ -5,10 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("./pathMap.json")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+
       pathMap = data;
       originalPathMap = deepCopy(pathMap);
-      console.log("Original path map:", originalPathMap);
+
     });
 });
 
@@ -22,20 +22,20 @@ const sleep = async (milliseconds) => {
 
 
 function handleVideoEnd(nextScene) {
-  console.log("Video ended");
+
 
   if (pathMap[nextScene].hasOwnProperty("option1")) {
-    console.log("This scene has options");
+
     populateButtons(nextScene);
     if (
       pathMap[nextScene].hasOwnProperty("numLoop") &&
       pathMap[nextScene]["numLoop"] >= 2
     ) {
-      console.log("number of times looped:", pathMap[nextScene]["numLoop"]);
+
       handleChoice("option2");
     }
   } else {
-    console.log("This scene has no options");
+
     if (pathMap[nextScene].hasOwnProperty("endScene")) {
       location.reload();
     }
@@ -49,7 +49,7 @@ function beginExperience() {
   document.getElementById("playPlane").removeAttribute("data-clickable");
   let videoSphere = document.getElementById("videoSphere");
   let firstVideoEnded = function () {
-    console.log("videoEnded");
+
     myVideo.removeEventListener("ended", firstVideoEnded);
     videoSphere.setAttribute("src", "#scene0b");
     let scene0b = document.getElementById("scene0b");
@@ -62,7 +62,7 @@ function beginExperience() {
         videoSphere.setAttribute("src", "#scene2");
         let scene2 = document.getElementById("scene2");
         scene2.addEventListener("ended", function () {
-          console.log("videoEnded");
+
           scene2.removeEventListener("ended", arguments.callee);
           document
             .getElementById("enterButton")
@@ -86,7 +86,7 @@ function beginExperience() {
  * @param {string} choiceID - the ID
  */
 function handleChoice(choiceID) {
-  console.log("This is your choice " + choiceID);
+
   let videoSphere = document.getElementById("videoSphere");
   //set current option buttons to invisible
   let option1 = document.getElementById("option1");
@@ -106,40 +106,41 @@ function handleChoice(choiceID) {
   let option2Next = pathMap[currentScene]["option2Next"];
 
   if (choiceID == "option1") {
-    console.log(pathMap[currentScene]);
+
     let nextScene = pathMap[currentScene]["option1Next"];
-    console.log("Moving to next scene: " + nextScene);
-    console.log(pathMap[nextScene]);
+
+
     let nextID = pathMap[nextScene]["id"];
     if (pathMap[nextScene].hasOwnProperty("flavorText")) {
-      console.log("We have flavor text");
+
       flavorText.setAttribute("value", pathMap[nextScene]["flavorText"]);
       flavorTextBool = true;
       flavorTextPlane.setAttribute("visible", "true");
       flavorText.setAttribute("visible", "true");
     }
     if (pathMap[nextScene].hasOwnProperty("numLoop")) {
-      console.log("number of times looped",pathMap[nextScene]["numLoop"]);
+
       pathMap[nextScene]["numLoop"]++;
     }
     let nextVideo = document.querySelector(nextID);
     videoSphere.setAttribute("src", nextID);
 
-    nextVideo.addEventListener("ended", function () {
+    nextVideo.addEventListener("ended", function videoEnded() {
       console.log("Video ended");
+      this.removeEventListener("ended", videoEnded);
 
       if (pathMap[nextScene].hasOwnProperty("option1")) {
-        console.log("This scene has options");
+
         populateButtons(nextScene);
         if (
           pathMap[nextScene].hasOwnProperty("numLoop") &&
           pathMap[nextScene]["numLoop"] >= 2
         ) {
-          console.log("number of times looped:",pathMap[nextScene]["numLoop"])
+
           handleChoice("option2");
         }
       } else {
-        console.log("This scene has no options");
+
         if (pathMap[nextScene].hasOwnProperty("endScene")) {
           location.reload();
         }
@@ -149,7 +150,7 @@ function handleChoice(choiceID) {
         //videoSphere.setAttribute("src", nextID);
       }
     });
-    console.log("Next video playing!");
+
     nextVideo.play();
 
     setTimeout(() => {
@@ -158,13 +159,13 @@ function handleChoice(choiceID) {
       flavorTextBool = false;
     }, 4000);
   } else {
-    console.log("entering option2 block");
-    console.log(pathMap[currentScene]);
+
+
     let nextScene = pathMap[currentScene]["option2Next"];
-    console.log("Moving to next scene: " + nextScene);
-    console.log(pathMap[nextScene]);
+
+
     if (pathMap[nextScene].hasOwnProperty("flavorText")) {
-      console.log("We have flavor text");
+
       flavorText.setAttribute("value", pathMap[nextScene]["flavorText"]);
       flavorTextBool = true;
       flavorTextPlane.setAttribute("visible", "true");
@@ -177,11 +178,12 @@ function handleChoice(choiceID) {
     let nextVideo = document.querySelector(nextID);
     videoSphere.setAttribute("src", nextID);
     document.querySelector("#" + currentScene).pause();
-    nextVideo.addEventListener("ended", function () {
-      console.log("Video ended");
+    nextVideo.addEventListener("ended", function videoEnded2() {
+      console.log("video ended");
+      this.removeEventListener("ended", videoEnded2);
 
       if (pathMap[nextScene].hasOwnProperty("option1")) {
-        console.log("This scene has options");
+
         populateButtons(nextScene);
         if (
           pathMap[nextScene].hasOwnProperty("numLoop") &&
@@ -190,7 +192,7 @@ function handleChoice(choiceID) {
           handleChoice("option2");
         }
       } else {
-        console.log("This scene has no options");
+
         if (pathMap[nextScene].hasOwnProperty("endScene")) {
           location.reload();
         }
@@ -213,13 +215,13 @@ function populateButtons(scene) {
   let option1Plane = document.getElementById("option1Plane");
   let option2Plane = document.getElementById("option2Plane");
   if (pathMap[currentScene].hasOwnProperty("option1")) {
-    console.log("This scene has options");
+
   } else {
-    console.log("This scene has no options");
+
     //play current video, then move to next scene
     videoSphere.setAttribute("src", pathMap[currentScene]["id"]);
     currentScene = pathMap[currentScene]["option1Next"];
-    console.log(currentScene);
+
     handleChoice("option1");
   }
   let option1 = pathMap[currentScene].option1;
