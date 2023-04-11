@@ -20,6 +20,29 @@ const sleep = async (milliseconds) => {
   });
 };
 
+
+function handleVideoEnd(nextScene) {
+  console.log("Video ended");
+
+  if (pathMap[nextScene].hasOwnProperty("option1")) {
+    console.log("This scene has options");
+    populateButtons(nextScene);
+    if (
+      pathMap[nextScene].hasOwnProperty("numLoop") &&
+      pathMap[nextScene]["numLoop"] >= 2
+    ) {
+      console.log("number of times looped:", pathMap[nextScene]["numLoop"]);
+      handleChoice("option2");
+    }
+  } else {
+    console.log("This scene has no options");
+    if (pathMap[nextScene].hasOwnProperty("endScene")) {
+      location.reload();
+    }
+    handleChoice("option1");
+  }
+}
+
 function beginExperience() {
   let myVideo = document.getElementById("scene0a");
   document.getElementById("startButton").setAttribute("visible", "false");
