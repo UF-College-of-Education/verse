@@ -117,15 +117,15 @@
   },
   "scene13a": {
     "id": "#scene13a",
-    "option1Next": "scene14"
+    "option1Next": "scene13b"
   },
   
   "scene13aError": {
     "id": "#scene13aError",
-    "option1Next": "scene14Error"
+    "option1Next": "scene13bError"
   },
     "scene13b": {
-    "id": "#scene13a",
+    "id": "#scene13b",
     "flavorText": "What was that?",
     "option1": "Do nothing, it's fine",
     "option2": "Cover ears with hands",
@@ -133,7 +133,7 @@
     "option2Next": "scene14"
   },
     "scene13bError": {
-    "id": "#scene13a",
+    "id": "#scene13bError",
     "flavorText": "What was that?",
     "option1": "Do nothing, it's fine",
     "option2": "Cover ears with hands",
