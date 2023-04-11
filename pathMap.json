@@ -119,12 +119,12 @@
     "id": "#scene13a",
     "option1Next": "scene13b"
   },
-  
+
   "scene13aError": {
     "id": "#scene13aError",
     "option1Next": "scene13bError"
   },
-    "scene13b": {
+  "scene13b": {
     "id": "#scene13b",
     "flavorText": "What was that?",
     "option1": "Do nothing, it's fine",
@@ -132,7 +132,7 @@
     "option1Next": "scene14",
     "option2Next": "scene14"
   },
-    "scene13bError": {
+  "scene13bError": {
     "id": "#scene13bError",
     "flavorText": "What was that?",
     "option1": "Do nothing, it's fine",
@@ -140,7 +140,7 @@
     "option1Next": "scene14Error",
     "option2Next": "scene14Error"
   },
-  
+
   "scene14": {
     "id": "#scene14",
     "option1Next": "scene15"
@@ -185,6 +185,10 @@
   },
   "scene17a": {
     "id": "#scene17a",
+    "flavorText": "This isn't what I ordered...",
+    "option1": "I didn't order this",
+    "option2": "I don't mind",
+    "option1Next": ""
     "option1Next": "scene19a"
   },
   "scene17b": {
@@ -193,7 +197,7 @@
     "option1": "I didn't order this",
     "option2": "I don't mind",
     "option1Next": "scene18b",
-    "option2Next":"scene19a"
+    "option2Next": "scene19a"
   },
   "scene18b": {
     "id": "#scene18b",
@@ -223,7 +227,7 @@
     "id": "#scene20",
     "option1Next": "scene21"
   },
-  "scene21" : {
+  "scene21": {
     "id": "#scene21",
     "endScene": true
   }
