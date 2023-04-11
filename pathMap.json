@@ -82,10 +82,11 @@
   "scene10a": {
     "flavorText": "The noise went down...",
     "id": "#scene10a",
-    "option1": "I'm ready to order",
-    "option2": "A little more time",
-    "option1Next": "scene10b",
-    "option2Next": "scene11a"
+    "numLoop": 0,
+    "option2": "I'm ready to order",
+    "option1": "A little more time",
+    "option2Next": "scene10b",
+    "option1Next": "scene11a"
   },
   "scene11a": {
     "id": "#scene11a",
