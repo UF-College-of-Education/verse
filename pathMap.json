@@ -181,10 +181,14 @@
   },
   "scene16cError": {
     "id": "#scene16cError",
-    "option1Next": "scene17b"
+    "option1Next": "scene17aError"
   },
   "scene17a": {
     "id": "#scene17a",
+    "option1Next": "scene175b"
+  },
+    "scene17aError": {
+    "id": "#scene17aError",
     "flavorText": "This isn't what I ordered...",
     "option1": "I didn't order this",
     "option2": "I don't mind",
@@ -193,11 +197,11 @@
   },
   "scene175b": {
     "id": "#scene175b",
-    "option1Next": "https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/19a_table%20cleared.mp4?v=1680199325568"
+    "option1Next": "scene19a"
   },
   "scene175c": {
     "id": "#scene175c",
-    "option1Next": "#scene17b"
+    "option1Next": "scene17b"
   },
   "scene17b": {
     "id": "#scene17b",
