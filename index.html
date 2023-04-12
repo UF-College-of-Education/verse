@@ -27,6 +27,40 @@
         },
       });
     </script>
+    <script>
+      AFRAME.registerComponent('pie-cursor', {
+        schema: {
+          duration: {type: 'number', default: 2000},
+          color: {type: 'string', default: 'white'}
+        },
+
+        init: function () {
+          var el = this.el;
+
+          // create the pie chart mesh
+          var geometry = new THREE.CircleGeometry(0.1, 32, Math.PI / 2, Math.PI * 2);
+          var material = new THREE.MeshBasicMaterial({color: this.data.color, transparent: true, opacity: 0.5});
+          var mesh = new THREE.Mesh(geometry, material);
+          mesh.rotation.set(-Math.PI / 2, 0, 0);
+
+          // add the mesh to the cursor entity
+          el.setObject3D('mesh', mesh);
+
+          // animate the mesh
+          var tween = new AFRAME.TWEEN.Tween({value: 0})
+            .to({value: 1}, this.data.duration)
+            .easing(AFRAME.TWEEN.Easing.Linear.None)
+            .onUpdate(function () {
+              mesh.material.opacity = this.value;
+              mesh.geometry.startAngle = Math.PI / 2;
+              mesh.geometry.endAngle = Math.PI / 2 + this.value * Math.PI * 2;
+              mesh.geometry.elementsNeedUpdate = true;
+            })
+            .repeat(Infinity)
+            .start();
+        }
+      });
+    </script>
   </head>
   <body>
     <a-scene>
@@ -317,7 +351,7 @@
         ></video>
       </a-assets>
       <!--Create the camera for the scene, enable fuse for Gaze based interactions-->
-      <a-camera id="camera">
+<!--       <a-camera pie-cursor="duration: 2000; color: white;" id="camera">
         <a-cursor
           raycaster="objects: [data-clickable];"
           fuse="true"
@@ -328,7 +362,9 @@
           animation__mouseenter="property: scale; to: 0.1 0.1 0.1; startEvents: mouseenter; dur:1500;"
           animation__mouseleave="property:scale; to: 1 1 1; startEvents: mouseleave; dur:250;"
         ></a-cursor>
-      </a-camera>
+      </a-camera> -->
+      
+      <a-entity camera pie-cursor></a-entity>
       <!--Create the sky (for our purposes, the sky is the video, and the limit) for the scene-->
       <a-videosphere
         src="#scene0a"

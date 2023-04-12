@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
 //Move all of our elements to global variables
 
 const sleep = async (milliseconds) => {
