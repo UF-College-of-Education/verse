@@ -28,37 +28,50 @@
       });
     </script>
     <script>
-      AFRAME.registerComponent('pie-cursor', {
+      AFRAME.registerComponent("pie-cursor", {
         schema: {
-          duration: {type: 'number', default: 2000},
-          color: {type: 'string', default: 'white'}
+          duration: { type: "number", default: 2000 },
+          color: { type: "string", default: "white" },
         },
 
         init: function () {
           var el = this.el;
 
           // create the pie chart mesh
-          var geometry = new THREE.CircleGeometry(0.1, 32, Math.PI / 2, Math.PI * 2);
-          var material = new THREE.MeshBasicMaterial({color: this.data.color, transparent: true, opacity: 0.5});
+          var geometry = new THREE.CircleGeometry(
+            0.1,
+            32,
+            Math.PI / 2,
+            Math.PI * 2
+          );
+          var material = new THREE.MeshBasicMaterial({
+            color: this.data.color,
+            transparent: true,
+            opacity: 0.5,
+          });
           var mesh = new THREE.Mesh(geometry, material);
           mesh.rotation.set(-Math.PI / 2, 0, 0);
 
           // add the mesh to the cursor entity
-          el.setObject3D('mesh', mesh);
+          el.setObject3D("mesh", mesh);
 
           // animate the mesh
-          var tween = new AFRAME.TWEEN.Tween({value: 0})
-            .to({value: 1}, this.data.duration)
-            .easing(AFRAME.TWEEN.Easing.Linear.None)
-            .onUpdate(function () {
-              mesh.material.opacity = this.value;
-              mesh.geometry.startAngle = Math.PI / 2;
-              mesh.geometry.endAngle = Math.PI / 2 + this.value * Math.PI * 2;
-              mesh.geometry.elementsNeedUpdate = true;
-            })
-            .repeat(Infinity)
-            .start();
-        }
+          var startAngle = Math.PI / 2;
+          var endAngle = Math.PI / 2;
+          var angleStep = (Math.PI * 2) / (this.data.duration / 16); // update every 16ms
+
+          var updateMesh = function () {
+            endAngle += angleStep;
+            mesh.geometry.startAngle = startAngle;
+            mesh.geometry.endAngle = endAngle;
+            mesh.geometry.elementsNeedUpdate = true;
+            if (endAngle < startAngle + Math.PI * 2) {
+              requestAnimationFrame(updateMesh);
+            }
+          };
+
+          requestAnimationFrame(updateMesh);
+        },
       });
     </script>
   </head>
@@ -277,7 +290,7 @@
           src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/17a_order%20arrives%20pizza%20salad%20(1).mp4?v=1681238917835"
           preload="none"
         ></video>
-                <video
+        <video
           id="scene17aError"
           crossorigin="anonymous"
           src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/17a_order%20arrives%20pizza%20salad%20(1).mp4?v=1681238917835"
@@ -351,20 +364,12 @@
         ></video>
       </a-assets>
       <!--Create the camera for the scene, enable fuse for Gaze based interactions-->
-<!--       <a-camera pie-cursor="duration: 2000; color: white;" id="camera">
-        <a-cursor
-          raycaster="objects: [data-clickable];"
-          fuse="true"
-          fuse-timeout="1500"
-          geometry="primitive: sphere; radius: 0.005"
-          id="cursor"
-          color="#FFFFFF"
-          animation__mouseenter="property: scale; to: 0.1 0.1 0.1; startEvents: mouseenter; dur:1500;"
-          animation__mouseleave="property:scale; to: 1 1 1; startEvents: mouseleave; dur:250;"
-        ></a-cursor>
-      </a-camera> -->
-      
-      <a-entity camera pie-cursor></a-entity>
+      <a-camera id="camera">
+        <a-cursor raycaster="objects: [data-clickable];" fuse="true" fuse-timeout="750" id="cursor" color="#6BA7FF"
+        animation__mouseenter="property: scale; to: 0.1 0.1 0.1; startEvents: mouseenter; dur:750;"
+        animation__mouseleave="property:scale; to: 1 1 1; startEvents: mouseleave; dur:250;"></a-cursor>
+      </a-camera>
+
       <!--Create the sky (for our purposes, the sky is the video, and the limit) for the scene-->
       <a-videosphere
         src="#scene0a"
