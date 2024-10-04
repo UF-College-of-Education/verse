@@ -1,0 +1,243 @@
+{
+  "scene0a": {
+    "id": "#scene0a",
+    "option1Next": "scene0b"
+  },
+  "scene0b": {
+    "id": "#scene0b",
+    "option1Next": "scene1"
+  },
+  "scene1a": {
+    "id": "#scene1a",
+    "option1Next": "scene2"
+  },
+  "scene2": {
+    "id": "#scene2",
+    "option1": {
+      "text": "Enter"
+    },
+    "option1Next": "scene3a"
+  },
+  "scene3a": {
+    "id": "#scene3a",
+    "option1": "Say nothing",
+    "option2": "Greet host",
+    "option1Next": "scene3b",
+    "option2Next": "scene3c",
+    "numLoop": 0
+  },
+  "scene3b": {
+    "id": "#scene3b",
+    "option1Next": "scene3a"
+  },
+  "scene3c": {
+    "id": "#scene3c",
+    "option1Next": "scene4"
+  },
+  "scene4": {
+    "id": "#scene4",
+    "option1Next": "scene5"
+  },
+  "scene5": {
+    "flavorText": "It's been a while...",
+    "id": "#scene5",
+    "option2": "Wait patiently",
+    "option1": "Shout for server",
+    "option2Next": "scene6a",
+    "option1Next": "scene6c",
+    "numLoop": 0
+  },
+  "scene6a": {
+    "id": "#scene6a",
+    "option1Next": "scene6b"
+  },
+  "scene6b": {
+    "id": "#scene6b",
+    "option1Next": "scene8"
+  },
+  "scene6c": {
+    "id": "#scene6c",
+    "option1Next": "scene6d"
+  },
+  "scene6d": {
+    "id": "#scene6d",
+    "option1Next": "scene5"
+  },
+  "scene8": {
+    "flavorText": "The room is getting loud...",
+    "id": "#scene8",
+    "option1": "Do nothing, it's fine",
+    "option2": "Ask server to help",
+    "option1Next": "scene10a",
+    "option2Next": "scene9"
+  },
+  "scene9": {
+    "id": "#scene9",
+    "option1Next": "scene10a"
+  },
+  "scene9a": {
+    "id": "#scene9a",
+    "option1Next": "scene10a"
+  },
+  "scene10a": {
+    "flavorText": "The noise went down...",
+    "id": "#scene10a",
+    "numLoop": 0,
+    "option2": "I'm ready to order",
+    "option1": "A little more time",
+    "option2Next": "scene10b",
+    "option1Next": "scene11a"
+  },
+  "scene11a": {
+    "id": "#scene11a",
+    "option1Next": "scene10a"
+  },
+  "scene11b": {
+    "id": "#scene11",
+    "option1Next": "scene10a"
+  },
+  "scene10b": {
+    "id": "#scene10b",
+    "option1": "Pizza and Salad",
+    "option2": "Pizza and Fries",
+    "option1Next": "scene10c",
+    "option2Next": "scene10cError"
+  },
+  "scene10c": {
+    "id": "#scene10c",
+    "option1Next": "scene13a"
+  },
+  "scene10cError": {
+    "id": "#scene10cError",
+    "option1Next": "scene13aError"
+  },
+
+  "scene12": {
+    "id": "#scene12",
+    "option1Next": "scene13"
+  },
+  "scene13a": {
+    "id": "#scene13a",
+    "option1Next": "scene13b"
+  },
+
+  "scene13aError": {
+    "id": "#scene13aError",
+    "option1Next": "scene13bError"
+  },
+  "scene13b": {
+    "id": "#scene13b",
+    "flavorText": "What was that?",
+    "option1": "Do nothing, it's fine",
+    "option2": "Cover ears with hands",
+    "option1Next": "scene14",
+    "option2Next": "scene14"
+  },
+  "scene13bError": {
+    "id": "#scene13bError",
+    "flavorText": "What was that?",
+    "option1": "Do nothing, it's fine",
+    "option2": "Cover ears with hands",
+    "option1Next": "scene14Error",
+    "option2Next": "scene14Error"
+  },
+
+  "scene14": {
+    "id": "#scene14",
+    "option1Next": "scene15"
+  },
+  "scene14Error": {
+    "id": "#scene14Error",
+    "option1Next": "scene15Error"
+  },
+  "scene15": {
+    "id": "#scene15",
+    "flavorText": "It has been a while...",
+    "option2": "Wait patiently",
+    "option1": "Shout for food",
+    "option2Next": "scene16c",
+    "option1Next": "scene16b",
+    "numLoop": 0
+  },
+  "scene15Error": {
+    "id": "#scene15Error",
+    "flavorText": "It has been a while...",
+    "option2": "Wait patiently",
+    "option1": "Shout for food",
+    "option2Next": "scene16cError",
+    "option1Next": "scene16bError",
+    "numLoop": 0
+  },
+  "scene16b": {
+    "id": "#scene16b",
+    "option1Next": "scene15"
+  },
+  "scene16bError": {
+    "id": "#scene16bError",
+    "option1Next": "scene15Error"
+  },
+  "scene16c": {
+    "id": "#scene16c",
+    "option1Next": "scene17a"
+  },
+  "scene16cError": {
+    "id": "#scene16cError",
+    "option1Next": "scene17aError"
+  },
+  "scene17a": {
+    "id": "#scene17a",
+    "option1Next": "scene175b"
+  },
+    "scene17aError": {
+    "id": "#scene17aError",
+    "flavorText": "This isn't what I ordered...",
+    "option1": "I didn't order this",
+    "option2": "I don't mind",
+    "option1Next": "scene175c",
+    "option2Next": "scene175b"
+  },
+  "scene175b": {
+    "id": "#scene175b",
+    "option1Next": "scene19a"
+  },
+  "scene175c": {
+    "id": "#scene175c",
+    "option1Next": "scene17b"
+  },
+  "scene17b": {
+    "id": "#scene17b",
+    "option1Next": "scene19a"
+  },
+  "scene18b": {
+    "id": "#scene18b",
+    "option1Next": "scene18c"
+  },
+  "scene18c": {
+    "id": "#scene18c",
+    "option1Next": "scene19a"
+  },
+  "scene19a": {
+    "id": "#scene19a",
+    "option1Next": "scene19b"
+  },
+  "scene19b": {
+    "flavorText": "It's customary to leave a tip",
+    "id": "#scene19b",
+    "option1": "Leave tip",
+    "option2": "Don't leave tip",
+    "option1Next": "scene19c",
+    "option2Next": "scene19c"
+  },
+  "scene19c": {
+    "id": "#scene19c",
+    "option1Next": "scene20"
+  },
+  "scene20": {
+    "id": "#scene20",
+    "option1Next": "scene21"
+  },
+  "scene21": {
+    "id": "#scene21",
+    "endScene": true
+  }
+}
