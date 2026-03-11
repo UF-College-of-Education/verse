@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>Piesanos Scene</title>
     <meta name="description" content="Piesanos Scene" />
+    <link rel="icon" type="image/png" href="assets/verse-app-logo250px.png" />
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="logic.js"></script>
     <script>
@@ -79,287 +80,287 @@
     <a-scene>
       <!--Load in the video assets-->
       <a-assets timeout="100000">
-        <!-- Load videos from assets folder-->
+        <!-- Load videos from assets folder. Some missing legacy Glitch files now use the closest local fallback. -->
+        <img id="scene1aStill" src="assets/0_Outside Piesanos Door.jpg" alt="Outside Piesanos Door" />
         <video
           id="scene0a"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/verse%20logo_vertical%20glowlines_40.mp4?v=1679662401640"
+          src="assets/verse_logo.mp4"
           preload="none"
         ></video>
         <video
           id="scene0b"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/0_Outside%20Piesanos.mp4?v=1680199328786"
+          src="assets/1_Outside Piesanos Lot.mp4"
           preload="none"
         ></video>
         <video
           id="scene1a"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/1a_Piesanos%20Front%20Door.mp4?v=1680199329156"
           preload="none"
         ></video>
         <video
           id="scene2"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/2_Inside_Approaching%20Host.mp4?v=1680199329537"
+          src="assets/3a_Host Greeting.mp4"
           preload="none"
         ></video>
         <video
           id="scene3a"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/3a_Host%20Greeting.mp4?v=1680199330179"
+          src="assets/3a_Host Greeting.mp4"
           preload="none"
         ></video>
         <video
           id="scene3b"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/3b_Host%20Sorry.mp4?v=1680199330816"
+          src="assets/3b_Host Sorry.mp4"
           preload="none"
         ></video>
         <video
           id="scene3c"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/3c_Host%20Follow%20Me_fixed.mp4?v=1680268010238"
+          src="assets/3c_Host Follow Me.mp4"
           preload="none"
         ></video>
         <video
           id="scene4"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/4_Server%20will%20be%20right%20w%20you.mp4?v=1680199332229"
+          src="assets/4_Server will be right w you.mp4"
           preload="none"
         ></video>
         <video
           id="scene5"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/5_waiting%20for%20server.mp4?v=1681147302518"
+          src="assets/5_waiting for server.mp4"
           preload="none"
         ></video>
         <video
           id="scene6a"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/6a_Server%20Intro.mp4?v=1680199333917"
+          src="assets/6a_Server Intro.mp4"
           preload="none"
         ></video>
         <video
           id="scene6b"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/6b_Server%20Brings%20Water%20and%20Menu.mp4?v=1680199335317"
+          src="assets/6b_Server Brings Water and Menu.mp4"
           preload="none"
         ></video>
         <video
           id="scene6c"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/6c_crowd%20looks.mp4?v=1680199336105"
+          src="assets/6c_shout_crowd looks.mp4"
           preload="none"
         ></video>
         <video
           id="scene6d"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/6c_Please%20Wait%20Don't%20Shout.mp4?v=1680199337015"
+          src="assets/6c_Please Wait Don't Shout.mp4"
           preload="none"
         ></video>
         <video
           id="scene8"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/8_getting%20louder_fixed.mp4?v=1680268009262"
+          src="assets/8_getting louder.mp4"
           preload="none"
         ></video>
         <video
           id="scene9"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/9_NoiseChoice_fixed.mp4?v=1680268011147"
+          src="assets/9a_NoiseChoice_Ask Server to turn down noise.mp4"
           preload="none"
         ></video>
         <video
           id="scene10a"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/10a_Noise%20Lowers%20Placing%20Order.mp4?v=1681147311269"
+          src="assets/10_Noise Lowers_Placing Order.mp4"
           preload="none"
         ></video>
         <video
           id="scene10b"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/10_Placing%20Order_Decision.mp4?v=1680199341798"
+          src="assets/10_Noise Lowers_Placing Order.mp4"
           preload="none"
         ></video>
         <video
           id="scene10c"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/10c_Thanks%20for%20your%20order.mp4?v=1680199343018"
+          src="assets/12_at table_before noise.mp4"
           preload="none"
         ></video>
         <video
           id="scene10cError"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/10c_Thanks%20for%20your%20order.mp4?v=1680199343018"
+          src="assets/12_at table_before noise.mp4"
           preload="none"
         ></video>
         <video
           id="scene11a"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/11a_ready%20to%20order_no.mp4?v=1680199343841"
+          src="assets/11a_ready to order_no.mp4"
           preload="none"
         ></video>
         <video
           id="scene11b"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/11b_say%20nothing.mp4?v=1680199344922"
+          src="assets/11b_say nothing.mp4"
           preload="none"
         ></video>
         <video
           id="scene12"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/12_at%20table_just%20water.mp4?v=1680199346088"
+          src="assets/12_at table_just water.mp4"
           preload="none"
         ></video>
         <video
           id="scene13a"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/13a_plates%20crash.mp4?v=1681147313187"
+          src="assets/13_plates crash_needs noise.mp4"
           preload="none"
         ></video>
         <video
           id="scene13aError"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/13a_plates%20crash.mp4?v=1681147313187"
+          src="assets/13_plates crash_needs noise.mp4"
           preload="none"
         ></video>
         <video
           id="scene13b"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/13b_what%20was%20that.mp4?v=1681147319015"
+          src="assets/13_plates crash_needs noise.mp4"
           preload="none"
         ></video>
         <video
           id="scene13bError"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/13b_what%20was%20that.mp4?v=1681147319015"
+          src="assets/13_plates crash_needs noise.mp4"
           preload="none"
         ></video>
         <video
           id="scene14"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/14_sorry%20plates%20dropped.mp4?v=1680199347893"
+          src="assets/14_sorry plates dropped.mp4"
           preload="none"
         ></video>
         <video
           id="scene14Error"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/14_sorry%20plates%20dropped.mp4?v=1680199347893"
+          src="assets/14_sorry plates dropped.mp4"
           preload="none"
         ></video>
         <video
           id="scene15"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/15_noise%20ends_it%20has%20been%20a%20while%20for%20dinner.mp4?v=1681147321296"
+          src="assets/15_noise ends_it has been a while for dinner.mp4"
           preload="none"
         ></video>
         <video
           id="scene15Error"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/15_noise%20ends_it%20has%20been%20a%20while%20for%20dinner.mp4?v=1681147321296"
+          src="assets/15_noise ends_it has been a while for dinner.mp4"
           preload="none"
         ></video>
         <video
           id="scene16b"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/16b_food%20coming%20be%20quiet.mp4?v=1680199349674"
+          src="assets/16b_food coming be quiet.mp4"
           preload="none"
         ></video>
         <video
           id="scene16bError"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/16b_food%20coming%20be%20quiet.mp4?v=1680199349674"
+          src="assets/16b_food coming be quiet.mp4"
           preload="none"
         ></video>
         <video
           id="scene16c"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/16c_food%20wil%20be%20out%20shortly.mp4?v=1680199350669"
+          src="assets/16c_food will be out shortly.mp4"
           preload="none"
         ></video>
         <video
           id="scene16cError"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/16c_food%20wil%20be%20out%20shortly.mp4?v=1680199350669"
+          src="assets/16c_food will be out shortly.mp4"
           preload="none"
         ></video>
         <video
           id="scene17a"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/17a_order%20arrives%20pizza%20salad%20(1).mp4?v=1681238917835"
+          src="assets/17a_order arrives pizza_salad.mp4"
           preload="none"
         ></video>
         <video
           id="scene17aError"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/17a_order%20arrives%20pizza%20salad%20(1).mp4?v=1681238917835"
+          src="assets/17a_order arrives pizza_salad.mp4"
           preload="none"
         ></video>
         <video
           id="scene17b"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/17b_order%20arrives%20pizza%20fries%20(1).mp4?v=1681227137819"
+          src="assets/17b_order arrives_ pizza fries.mp4"
           preload="none"
         ></video>
         <video
           id="scene175b"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/175b_enjoy.mp4?v=1681227137399"
+          src="assets/19a_table cleared.mp4"
           preload="none"
         ></video>
         <video
           id="scene175c"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/175c_wrong%20order_takes%20salad.mp4?v=1681227137096"
+          src="assets/18a_wrong order_takes salad.mp4"
           preload="none"
         ></video>
         <video
           id="scene18a"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/18a_wrong%20order_takes%20salad.mp4?v=1680199323055"
+          src="assets/18a_wrong order_takes salad.mp4"
           preload="none"
         ></video>
         <video
           id="scene18b"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/18b_wrong%20order_takes%20fries.mp4?v=1680199323749"
+          src="assets/18b_wrong order_takes fries.mp4"
           preload="none"
         ></video>
         <video
           id="scene18c"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/18c_correcting%20order_salad.mp4?v=1680199324491"
+          src="assets/18c_correcting order_salad.mp4"
           preload="none"
         ></video>
         <video
           id="scene19a"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/19a_table%20cleared.mp4?v=1680199325568"
+          src="assets/19a_table cleared.mp4"
           preload="none"
         ></video>
         <video
           id="scene19b"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/19b_brings%20check.mp4?v=1681221706143"
+          src="assets/19b_brings check.mp4"
           preload="none"
         ></video>
         <video
           id="scene19c"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/19c_Bye%20Have%20a%20nice%20day.mp4?v=1680199327126"
+          src="assets/19c_Bye Have a nice day.mp4"
           preload="none"
         ></video>
         <video
           id="scene20"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/c7996204-ade2-46af-97e4-a5752751eca2/20_leaving%20piesanos.mp4?v=1680199327804 "
+          src="assets/1_Outside Piesanos Lot.mp4"
           preload="none"
         ></video>
         <video
           id="scene21"
           crossorigin="anonymous"
-          src="https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/21_End_Credits.mp4?v=1680075203583"
+          src="assets/credits-museum.mp4"
           preload="none"
         ></video>
       </a-assets>
@@ -391,7 +392,7 @@
         <a-plane
           color="#426E49"
           id="playPlane"
-          material="src: url(https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/less%20transparent%20frame%2C%208-5.png?v=1680030753877); transparent:true"
+          material="transparent:true; opacity:0.85"
           data-clickable
           scale="0.8 0.5 1"
           animation="property:material.color;
@@ -418,7 +419,7 @@
         <a-plane
           color="#426E49"
           id="flavorTextPlane"
-          material="src: url(https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/less%20transparent%20frame%2C%208-5.png?v=1680030753877); transparent:true"
+          material="transparent:true; opacity:0.85"
           scale="1.6 1 1"
           animation="property:material.color;
           to:#1D615C;
@@ -445,7 +446,7 @@
         <a-plane
           color="#426E49"
           scale="0.8 0.5 1"
-          material="src: url(https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/less%20transparent%20frame%2C%208-5.png?v=1680030753877); transparent:true"
+          material="transparent:true; opacity:0.85"
           id="enterPlane"
           animation="property:material.color;
         to:#1D615C;
@@ -472,7 +473,7 @@
         <a-plane
           color="#426E49"
           id="option1Plane"
-          material="src: url(https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/less%20transparent%20frame%2C%208-5.png?v=1680030753877); transparent:true"
+          material="transparent:true; opacity:0.85"
           scale="0.8 0.5 1"
           animation="property:material.color;
           to:#1D615C;
@@ -500,7 +501,7 @@
           color="#426E49"
           id="option2Plane"
           scale="0.8 0.5 1"
-          material="src: url(https://cdn.glitch.global/2a9c8ea7-e69c-449f-8535-c66daf2cd371/less%20transparent%20frame%2C%208-5.png?v=1680030753877); transparent:true"
+          material="transparent:true; opacity:0.85"
           animation="property:material.color;
           to:#1D615C;
           dur:500;

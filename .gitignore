@@ -1,0 +1,19 @@
+# OS / editor metadata
+.DS_Store
+._*
+Thumbs.db
+
+# Glitch project metadata
+.glitch-assets
+.glitchdotcom.json
+.data/
+
+# Large local media files
+*.mp4
+*.mov
+*.avi
+*.m4v
+*.webm
+
+# Optional local archives
+*.zip
