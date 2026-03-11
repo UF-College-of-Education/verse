@@ -56,26 +56,13 @@ function beginExperience() {
     let scene0b = document.getElementById("scene0b");
     let secondVideoEnded = function () {
       scene0b.removeEventListener("ended", secondVideoEnded);
-      videoSphere.setAttribute("src", "#scene1a");
-      let scene1a = document.getElementById("scene1a");
-      let thirdVideoEnded = function () {
-        scene1a.removeEventListener("ended", thirdVideoEnded);
-        videoSphere.setAttribute("src", "#scene2");
-        let scene2 = document.getElementById("scene2");
-        scene2.addEventListener("ended", function () {
-
-          scene2.removeEventListener("ended", arguments.callee);
-          document
-            .getElementById("enterButton")
-            .setAttribute("visible", "true");
-          document
-            .getElementById("enterPlane")
-            .setAttribute("data-clickable", "true");
-        });
-        scene2.play();
-      };
-      scene1a.addEventListener("ended", thirdVideoEnded);
-      scene1a.play();
+      videoSphere.setAttribute("src", "#scene1aStill");
+      document
+        .getElementById("enterButton")
+        .setAttribute("visible", "true");
+      document
+        .getElementById("enterPlane")
+        .setAttribute("data-clickable", "true");
     };
     scene0b.addEventListener("ended", secondVideoEnded);
     scene0b.play();
@@ -247,7 +234,6 @@ function enterRestaurant() {
   let option1Plane = document.getElementById("option1Plane");
   let option2 = document.getElementById("option2");
   let option2Plane = document.getElementById("option2Plane");
-  let myVideo = document.querySelector("#scene3a");
   let enterButton = document.getElementById("enterButton");
   let scene3a = document.getElementById("scene3a");
   videoSphere.setAttribute("src", "#scene3a");
@@ -260,12 +246,9 @@ function enterRestaurant() {
   //option2.setAttribute("visible", "false");
   //option2Plane.removeAttribute("data-clickable");
 
-  scene3a.addEventListener("ended", function () {
-    // option1.setAttribute("visible", "true");
-    // option1Plane.setAttribute("data-clickable");
-    // option2.setAttribute("visible", "true");
-    // option2Plane.setAttribute("data-clickable");
+  scene3a.addEventListener("ended", function scene3aEnded() {
+    scene3a.removeEventListener("ended", scene3aEnded);
     populateButtons("scene3a");
   });
-  myVideo.play();
+  scene3a.play();
 }
